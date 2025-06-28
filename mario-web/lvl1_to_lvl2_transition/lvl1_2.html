@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mario Dives Into Danger!</title>
+  <link rel="stylesheet" href="lvl1_2.css" />
+</head>
+<body>
+  <!-- Container for seamless transition between level 1 and 2 -->
+  <div id="animation-screen">
+    <!-- Title showing Mario's next challenge -->
+    <h1 id="transition-title">🌊 Mario Dives Into Danger!</h1>
+
+    <!-- Animation area with characters -->
+    <div class="animation-container">
+      <!-- Mario character sprite -->
+      <img id="mario" src="../lvl1/classic_mario.jpeg" alt="Mario" class="character" />
+      
+      <!-- Fish enemy character -->
+      <img id="fish" src="../lvl2/fish.jpg" alt="Fish Enemy" class="character hidden" />
+      
+      <!-- Danger alert icon -->
+      <img id="danger" src="danger.jpg" alt="Danger Icon" class="hidden" />
+    </div>
+  </div>
+
+  <!-- Animation controller script -->
+  <script src="lvl1_2.js"></script>
+</body>
+</html>

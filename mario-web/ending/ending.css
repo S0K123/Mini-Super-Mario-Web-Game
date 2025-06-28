@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: "Comic Sans MS", sans-serif;
+    overflow: hidden;
+  }
+  
+  #ending-screen {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #confetti-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  .character-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    position: absolute;          /* ✅ Position container absolutely */
+    top: 20%;                    /* ✅ Move to vertical center */
+    left: 50%;
+    transform: translate(-50%, -50%);  /* ✅ Center horizontally and vertically */
+    z-index: 1;
+  }
+  
+  .character {
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 0 15px white;
+    border-radius: 10px;
+    position: relative;
+  }
+  
+  
+  /* Animation triggers */
+  .enter {
+    animation: enterFromLeft 2.0s forwards;
+  }
+  .exit {
+    animation: exitRight 2.0s forwards;
+  }
+  
+  #toad.celebrate {
+    animation: cheerToad 2.0s infinite;
+  }
+  #peach.celebrate {
+    animation: floatPeach 2.0s infinite;
+  }
+  #mario.celebrate {
+    animation: bounceMario 2.0s infinite;
+  }
+  
+  /* Animations */
+  @keyframes enterFromLeft {
+    from {
+      transform: translate(-100vw, 0);
+    }
+    to {
+      transform: translate(0, 0);
+    }
+  }
+  
+  @keyframes exitRight {
+    from {
+      transform: translate(0, 0);
+    }
+    to {
+      transform: translate(100vw, 0);
+    }
+  }
+  
+  @keyframes cheerToad {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(10deg) scale(1.05); }
+    50% { transform: rotate(-10deg) scale(1); }
+    75% { transform: rotate(8deg) scale(1.05); }
+  }
+  
+  @keyframes floatPeach {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+  }
+  
+  @keyframes bounceMario {
+    0%, 100% { transform: translateY(0); }
+    25% { transform: translateY(-15px); }
+    50% { transform: translateY(0); }
+    75% { transform: translateY(-10px); }
+  }
+  
+  /* Centered Text */
+  #congrats-text {
+    font-size: 48px;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in;
+    z-index: 1;
+  
+    position: absolute;
+    top: 30%;                /* 👈 Move it down */
+    left: 50%;
+    transform: translateX(-50%); /* 👈 Only center horizontally */
+  }
+  
+  #final-message {
+    font-size: 28px;
+    animation: fadeIn 2s ease-in;
+    z-index: 1;
+  
+    position: absolute;
+    top: 50%;                /* 👈 Slightly below the congrats text */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mario Victory</title>
+  <link rel="stylesheet" href="ending.css" />
+</head>
+<body>
+  <div id="ending-screen">
+    <!-- 🎉 Confetti Canvas (behind characters) -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- 🎊 Main Message -->
+    <h1 id="congrats-text" style="display: none;">
+      👏 Great job, you saved Princess Peach!
+    </h1>
+
+    <!-- 🧑‍🤝‍🧑 Character Images -->
+    <div class="character-container">
+      <img id="toad" class="character" src="../lvl3/toad.jpg" alt="Toad" />
+      <img id="peach" class="character" src="../lvl3/princess_peach.jpg" alt="Peach" />
+      <img id="mario" class="character" src="../lvl1/classic_mario.jpeg" alt="Mario" />
+    </div>
+
+    <!-- 🎮 Final Message -->
+    <p id="final-message" style="display: none;">
+      Press <strong>R</strong> to play again...
+    </p>
+  </div>
+
+  <script src="ending.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mario Game - Level 3</title>
+  <link rel="stylesheet" href="style_lvl3.css" />
+</head>
+<body>
+  <div id="welcome-screen">
+    <h1>🌋 Level 3: Final Boss Battle ⚔️</h1>
+    <p><strong>Instructions:</strong></p>
+    <ul style="text-align: left; max-width: 600px; margin: 0 auto; font-size: 18px;">
+      <li>🕹️ Use arrow keys to move Mario</li>
+      <li>⬆️ Press UP to jump</li>
+      <li>🔥 Press <strong>F</strong> to drop a Fire Mushroom (shoot fireballs)</li>
+      <li>💧 Press <strong>W</strong> to drop a Water Mushroom (shoot waterballs)</li>
+      <li>➕ Press <strong>G</strong> to drop a Heal (increase energy)</li>
+      <li>⭐ Press <strong>S</strong> to drop a Star (temporary invincibility & speed)</li>
+      <li>⚠️ Defeat Bowser by shooting or jumping on him</li>
+      <li>💥 Avoid Bowser’s attacks — survive and win!</li>
+      <li>🏁 Reach the flag to rescue Princess Peach 👸 and Toad 🍄</li>
+      <li>🔁 Press <strong>R</strong> to restart after Game Over 🔄</li>
+    </ul>
+    <button id="start-button">▶️ Begin Level 3</button>
+  </div>
+
+  <canvas id="gameCanvas" width="1400" height="600" style="display: none;"></canvas>
+  <script src="level3.js" defer></script>
+  <script>
+    document.getElementById("start-button").addEventListener("click", () => {
+      document.getElementById("welcome-screen").style.display = "none";
+      document.getElementById("gameCanvas").style.display = "block";
+      startLevel3(); // Start game only after button click
+    });
+  </script>
+</body>
+</html>

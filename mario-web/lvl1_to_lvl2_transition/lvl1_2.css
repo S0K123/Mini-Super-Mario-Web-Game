@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #001f33; /* Deep ocean blue */
+  font-family: "Comic Sans MS", sans-serif;
+  color: white;
+  height: 100vh;
+  overflow: hidden;
+  animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#animation-screen {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  position: relative;
+}
+
+#transition-title {
+  font-size: 50px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.animation-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin-top: 40px;
+}
+
+.character {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px white;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  /* ⛔ Removed transition: opacity to prevent fade */
+}
+
+#mario {
+  transition: none !important; /* ✅ Ensures no fade-in */
+}
+
+#danger {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 0 5px red);
+  transition: opacity 0.5s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes runToCenter {
+  from { transform: translate(-300px, 0); opacity: 0; }
+  to { transform: translateX(-50%) translateY(0); opacity: 1; }
+}
+
+@keyframes diveTogether {
+  from { transform: translateX(-50%) translateY(0); }
+  to { transform: translateX(-50%) translateY(700px); opacity: 0.6; }
+}
+
+/* ✅ Slide only — no fade, no curve */
+@keyframes swimToCenter {
+  from {
+    left: -300px;
+    top: 50%;
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+  to {
+    left: 50%;
+    top: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+@keyframes diveTogetherFast {
+  from {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 1;
+  }
+  to {
+    transform: translate(-50%, 700px) scale(1.1);
+    opacity: 0.6;
+  }
+}

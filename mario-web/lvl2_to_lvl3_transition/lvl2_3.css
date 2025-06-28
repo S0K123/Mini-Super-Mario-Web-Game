@@ -1,0 +1,124 @@
+/* Basic Page Setup */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: "Comic Sans MS", sans-serif;
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+    animation: fadeIn 1.5s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  
+  /* Main Animation Screen */
+  #animation-screen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    position: relative;
+  }
+  
+  #transition-title {
+    font-size: 48px;
+    margin-top: 20px;
+    text-shadow: 2px 2px 6px black;
+  }
+  
+  /* Character Container */
+  .animation-container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    margin-top: 30px;
+  }
+  
+  /* Common Character Styles */
+  .character {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    transition: transform 1s ease;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  /* Character Positions */
+  #peach {
+    position: absolute;
+    top: 150px;
+    left: 0;  /* ✅ allows JS to update left */
+    z-index: 2;
+    box-shadow: 0 0 15px white; /* ✅ White glow around characters */
+    border-radius: 10px;         /* Optional: soft rounded edges like before */
+  }
+  
+  #bowser {
+    position: absolute;
+    top: 150px;
+    left: 0;  /* ✅ allows JS to update left */
+    z-index: 2;
+    box-shadow: 0 0 15px white; /* ✅ White glow around characters */
+    border-radius: 10px;         /* Optional: soft rounded edges like before */
+  }  
+  
+  #mario {
+    position: absolute;
+    top: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    box-shadow: 0 0 15px white; /* ✅ White glow around characters */
+    border-radius: 10px;         /* Optional: soft rounded edges like before */
+  }
+ 
+  /* Animations */
+  
+  /* Mario rises from bottom */
+  @keyframes riseUp {
+    from { transform: translate(-50%, 600px); }
+    to   { transform: translate(-50%, 180px); }
+  }
+    
+  /* Characters enter from right */
+  @keyframes enterRight {
+    from { transform: translateX(800px); }
+    to   { transform: translateX(0); }
+  }
+  
+  /* Peach crying animation */
+  @keyframes peachCry {
+    0%, 100% { transform: translateX(0) rotate(0deg); }
+    25%      { transform: translateX(-5px) rotate(-2deg); }
+    50%      { transform: translateX(5px) rotate(2deg); }
+    75%      { transform: translateX(-3px) rotate(-1deg); }
+  }
+  
+  /* Bowser laughing animation */
+  @keyframes bowserLaugh {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.1); }
+  }
+  
+  /* Peach & Bowser exit left */
+  @keyframes exitLeftFull {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-1200px); }
+  }
+  
+  /* Mario follows them left */
+  @keyframes marioFollowLeft {
+    from { transform: translate(-50%, 180px); }
+    to   { transform: translate(-1200px, 180px); }
+  }  
+  
+  

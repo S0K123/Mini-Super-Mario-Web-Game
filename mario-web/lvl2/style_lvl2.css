@@ -1,0 +1,61 @@
+/* 🌊 Underwater Level Styling */
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 18px; /* Match Level 1 text size */
+  color: #ffffff;
+  background-color: #001f33; /* Deep ocean blue */
+  text-align: center;
+}
+
+#welcome-screen {
+  margin-top: 100px;
+}
+
+#start-button {
+  padding: 15px 30px;          /* Balanced size */
+  font-size: 20px;             /* Slightly smaller for better readability */
+  cursor: pointer;
+  border: none;
+  background-color: #00bfff;   /* Bright blue */
+  color: white;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+#start-button:hover {
+  background-color: #0099cc;   /* Slightly darker on hover */
+}
+
+canvas {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;   /* Fill full screen */
+  height: 100vh;
+  margin: 0 auto;
+  background-color: black;
+}
+
+#gameCanvas {
+  display: none;
+  background-color: black;
+}
+
+/* Ensure canvas fills the whole browser window */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#gameCanvas {
+  display: block;
+  background: black;
+}

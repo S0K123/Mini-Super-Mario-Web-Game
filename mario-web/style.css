@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  font-family: "Comic Sans MS", sans-serif;
+  color: white;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#welcome-screen {
+  text-align: center;
+}
+
+h1 {
+  font-size: 50px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+#start-button {
+  padding: 15px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background-color: gold;
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#start-button:hover {
+  background-color: orange;
+}
+
+#animation-screen {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.animation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-top: 30px;
+}
+
+.character {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px white;
+  transition: opacity 1s ease;
+}
+
+/* 🔽 Animations */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+}
+
+@keyframes slide-in-left {
+  0% { transform: translateX(-300px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes move-right-fade {
+  0% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(150px); opacity: 0; }
+}
+
+@keyframes run-away {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(1000px); }
+}
+
+@keyframes jump {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+}
+
+/* 🔽 Class-based triggers */
+#peach.shake {
+  animation: shake 0.5s infinite;
+}
+
+#peach.move-away {
+  animation: move-right-fade 1s forwards;
+}
+
+#bowser.slide-in {
+  animation: slide-in-left 1s ease-out forwards;
+  opacity: 1;
+}
+
+#bowser.exit {
+  animation: move-right-fade 1s forwards;
+}
+
+#mario.run {
+  animation: run-away 2s linear forwards;
+}
+
+#mario.jump {
+  animation: jump 1s infinite;
+}
+
+.hidden {
+  display: none;
+}
