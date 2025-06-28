@@ -39,7 +39,7 @@ A complete 3-level **Mario-style platformer game** built using **HTML, CSS, and 
 
 ### 🔗 Play Online  
 **Just click:**  
-👉 [https://s0k123.github.io/Mini-Super-Mario-Web-Game/](https://s0k123.github.io/Mini-Super-Mario-Web-Game/)
+👉 [https://SOK123.github.io/Mini-Super-Mario-Web-Game/](https://s0k123.github.io/Mini-Super-Mario-Web-Game/)
 
 ### 💻 Play Offline  
 1. Clone or download the repo:
